@@ -1,6 +1,32 @@
 
 import { Link } from "react-router-dom"
+import { useState ,useEffect} from "react";
+import FoodData from "../Data/data";
 const Catogory_menu = () => {
+
+  const [catogories, setcatogories] = useState([]);
+
+    
+
+      const cat = ()=>{
+
+        const unique = [...new Set(FoodData.map((item)=> item.category ))]
+        setcatogories(unique) ;
+
+        console.log(unique);
+        
+    
+      }
+
+      useEffect(() => {
+        
+        cat() ;
+      }, [])
+      
+    
+    
+
+
   return (
     <div>
         <div>

@@ -1,4 +1,12 @@
-const Items = ({ img, name, price, rating, des }) => {
+import { useDispatch } from "react-redux";
+import { addCart } from "../Redux_Toolkit/CartSlice";
+
+const Items = ({ img, name, price, rating, des ,id}) => {
+
+  
+
+
+    const dispatch = useDispatch () ; 
   return (
     <div className="text-black bg-slate-900 flex justify-center p-5">
       <div className="w-[250px] h-[350px] p-3 border rounded-md bg-sky-600 flex flex-col justify-between flex-shrink-0">
@@ -20,7 +28,12 @@ const Items = ({ img, name, price, rating, des }) => {
             <span className="text-sm mr-1">⭐</span>{rating}
           </h2>
           <button className="bg-slate-900 text-gray-50 rounded-md px-2 
-           py-1 cursor-pointer">Add to Cart</button>
+           py-1 cursor-pointer"
+           onClick={()=>{
+
+              dispatch(addCart({id,name,price,rating,quantity:1,img}))
+
+           }}>Add to Cart</button>
         </div>
       </div>
     </div>

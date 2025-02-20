@@ -4,8 +4,7 @@ import Catogory_menu from "../Components/Catogory_menu"
 
 
 const Home = () => {
-  
- 
+
 
   return (
    

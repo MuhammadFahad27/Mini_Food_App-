@@ -32,6 +32,7 @@ const All_Items = () => {
           price={item.price}
           rating={item.rating}
           des={item.desc.slice(0, 80)}
+          id = {item.id}
         />
           </div>
       );
