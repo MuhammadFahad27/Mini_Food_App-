@@ -1,6 +1,7 @@
 import Cart_Items from "./Cart_Items"
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
 
@@ -43,9 +44,13 @@ const Cart = () => {
             <div className=" mt-auto  mb-1 ml-3">
                 <h1>Total Items : {total_items} </h1>
                 <h1 className="mb-1">Total Amount : {price}$ </h1>
-                <button className="bg-slate-900 text-white w-[90vw] 
-                sm:w-[33vw] xl:w-[22vw] rounded-md 
-                cursor-pointer  py-1">Check Out </button>
+                <Link to={"/confirm"}>
+
+                  <button className="bg-slate-900 text-white w-[90vw] 
+                  sm:w-[33vw] xl:w-[22vw] rounded-md 
+                  cursor-pointer  py-1">Check Out </button>
+                </Link>
+                
             </div>
     </div>
   )
