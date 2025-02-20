@@ -39,9 +39,16 @@ const Catogory_menu = () => {
         <div className="sm:ml-[120px] sm:mt-4 md:ml-[200px] lg:ml-[220px] xl:flex 
         xl:ml-[330px] xl:gap-7
         2xl:ml-[460px]">
-            <Link className="bg-gray-500 text-gray-300 ml-12  w-[350px] py-1  hover:text-black rounded-sm cursor-pointer  mb-3
-            sm:w-[300px] lg:w-[450px] text-center
-            xl:w-[100px] xl:ml-0" to={"ALL_Items"}>All</Link>
+           
+           <Link  to={"ALL_Items"} >
+
+                  
+             <button className="bg-gray-500 text-gray-300 ml-12  w-[260px] py-1 hover:text-black rounded-sm cursor-pointer  mb-3
+             sm:w-[300px] lg:w-[450px]
+             xl:w-[100px] xl:ml-0 ">All</button> 
+
+           </Link>
+           
              <button className="bg-gray-500 text-gray-300 ml-12  w-[260px] py-1 hover:text-black rounded-sm cursor-pointer  mb-3
              sm:w-[300px] lg:w-[450px]
              xl:w-[100px] xl:ml-0 ">Lunch</button> 

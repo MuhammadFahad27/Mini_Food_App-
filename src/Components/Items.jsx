@@ -1,9 +1,10 @@
 import { useDispatch } from "react-redux";
 import { addCart } from "../Redux_Toolkit/CartSlice";
-
+import {useState} from "react"
 const Items = ({ img, name, price, rating, des ,id}) => {
 
-  
+  let [spin , setSpin] = useState(false) ;
+              
 
 
     const dispatch = useDispatch () ; 
@@ -28,10 +29,11 @@ const Items = ({ img, name, price, rating, des ,id}) => {
             <span className="text-sm mr-1">⭐</span>{rating}
           </h2>
           <button className="bg-slate-900 text-gray-50 rounded-md px-2 
-           py-1 cursor-pointer"
+           py-1 cursor-pointer hover:bg-sky-100 hover:text-black"
            onClick={()=>{
 
-              dispatch(addCart({id,name,price,rating,quantity:1,img}))
+              dispatch(addCart({id,name,price,rating,quantity:1,img}));
+                setSpin(!spin)
 
            }}>Add to Cart</button>
         </div>

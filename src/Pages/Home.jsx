@@ -1,21 +1,22 @@
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import Cart from "../Components/Cart"
 import Catogory_menu from "../Components/Catogory_menu"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faCartShopping} from "@fortawesome/free-solid-svg-icons";
 import {useState} from "react"
+import spin from "../Components/Items"
 
 const Home = () => {
 
   const [cart,setCart] = useState(false) ;
-  console.log(cart);
+ 
   
   return (
    
     <>
         <div className="bg-slate-950 h-screen">
 
-         
+      
 
           <div>
               <input type="search" autoComplete="off"  className="bg-white
@@ -27,21 +28,22 @@ const Home = () => {
               cursor-pointer hover:bg-blue-400 hover:text-black
               sm:py-2 sm:ml-4 sm:px-9">Search </button>
           </div>
-
           <Catogory_menu/>
 
-          {cart && <Cart/>}
-          
-          <div className={`absolute right-0 bottom-0 mb-6 mr-6 text-3xl text-white  cursor-pointer
-           `}>
-          <FontAwesomeIcon icon={faCartShopping} onClick={()=>{
+            <div>
 
-              setCart(!cart) ;
 
-          }}  />
-          </div>
-       
-
+              <h1><FontAwesomeIcon icon={faCartShopping}
+              className={`text-white text-4xl absolute right-0 mr-6 mb-6 bottom-0
+              cursor-pointer
+              ${spin &&  "animate-bounce"}` }
+              onClick={()=>{
+                setCart(!cart)
+              }}/></h1>
+            </div>
+         
+              {cart && <Cart/>}
+        
          
         </div>
     </>

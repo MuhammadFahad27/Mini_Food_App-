@@ -6,6 +6,8 @@ const All_Items = () => {
 
   let [animation , setAnimation ] = useState("") ;
 
+  
+
   useEffect(() => {
    
     setAnimation("slide-in-left")
@@ -16,12 +18,18 @@ const All_Items = () => {
   return (
     <div className="bg-slate-900">  
       <div className="bg-slate-900">
+     
+
         <h1 className={`text-gray-50 text-6xl mt-4 text-center mb-4    duration-700
         ${animation}`
         }>Hi ! Find The Best Food </h1>
+      
+    
       </div>
+      
           <div className="flex flex-wrap gap-10 bg-slate-900 shrink-0 justify-center">
 
+          
      
             {FoodData.map((item) => {
           return (
@@ -37,7 +45,9 @@ const All_Items = () => {
           </div>
       );
     })}
+        
       </div>
+
     </div>
   );
 };
