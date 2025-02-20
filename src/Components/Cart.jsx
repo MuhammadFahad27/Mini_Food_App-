@@ -12,7 +12,7 @@ const Cart = () => {
     
   return (
     <div className={`bg-gray-300 w-[100vw] sm:w-[40vw] h-full top-0 right-0 xl:w-[25vw]  fixed  p-1
-    overflow-y-auto
+    overflow-y-auto z-[1000]
     ${cart && "hidden"}`}>
 
             <div className="flex  justify-between p-3">

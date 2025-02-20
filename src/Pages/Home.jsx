@@ -1,11 +1,15 @@
 
 import Cart from "../Components/Cart"
 import Catogory_menu from "../Components/Catogory_menu"
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faCartShopping} from "@fortawesome/free-solid-svg-icons";
+import {useState} from "react"
 
 const Home = () => {
 
-
+  const [cart,setCart] = useState(false) ;
+  console.log(cart);
+  
   return (
    
     <>
@@ -25,7 +29,17 @@ const Home = () => {
           </div>
 
           <Catogory_menu/>
-          <Cart/>
+
+          {cart && <Cart/>}
+          
+          <div className={`absolute right-0 bottom-0 mb-6 mr-6 text-3xl text-white  cursor-pointer
+           `}>
+          <FontAwesomeIcon icon={faCartShopping} onClick={()=>{
+
+              setCart(!cart) ;
+
+          }}  />
+          </div>
        
 
          
