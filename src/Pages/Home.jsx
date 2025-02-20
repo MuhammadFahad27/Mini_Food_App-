@@ -1,19 +1,33 @@
-
+import ClipLoader from "react-spinners/ClipLoader";
+import BarLoader  from "react-spinners/BarLoader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import Cart from "../Components/Cart"
 import Catogory_menu from "../Components/Catogory_menu"
-import {useState} from "react"
+import {useState,useEffect} from "react"
 import spin from "../Components/Items"
 
 const Home = () => {
 
   const [cart,setCart] = useState(false) ;
+  const [load , setload] = useState(true) ;
+
+  useEffect(() => {
+    
+    setTimeout(() => {
+
+      setload(false) ;
+    }, 2000);
+    
+  }, [])
+  
  
   
   return (
    
     <>
+      
+        
         <div className="bg-slate-950 h-screen">
 
       
@@ -46,6 +60,8 @@ const Home = () => {
         
          
         </div>
+
+          
     </>
   )
 }

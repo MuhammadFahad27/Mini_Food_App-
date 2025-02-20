@@ -1,5 +1,7 @@
 import {useState,useEffect} from "react" ;
 import ClipLoader from "react-spinners/ClipLoader";
+
+
 import { useSelector } from "react-redux";
 
 const Sucesses = () => {
@@ -33,7 +35,8 @@ const Sucesses = () => {
                 <h2 className="text-white text-4xl">Thanks......</h2>
                 </div>:
                 <div >
-                    <h1 className="text-red-500 text-4xl sm:text-7xl">Your Cart is Empty ....</h1>
+                    <h1 className="text-red-500 text-4xl sm:text-5xl
+                    lg:7xl">Your Cart is Empty ....</h1>
                 </div>
             
             
