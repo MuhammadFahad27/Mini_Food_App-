@@ -8,6 +8,7 @@ const Cart = () => {
   console.log("hello")
     let [cart,setCart] = useState(false) ;
     let data = useSelector((state) => state.cart.cart)
+    
     let total_items = data.reduce((total,curr)=>total+curr.quantity,0) ;
     let price = data.reduce((total,curr)=>total+curr.price*curr.quantity,0) ;
     
