@@ -1,28 +1,33 @@
 
 import { Link } from "react-router-dom"
 import { useState ,useEffect} from "react";
+import { useDispatch } from "react-redux";
+import {setCatogory} from "../Redux_Toolkit/CatogorySlice"
 import FoodData from "../Data/data";
 const Catogory_menu = () => {
 
-  const [catogories, setcatogories] = useState([]);
+  const dispatch = useDispatch() ;
+  
+ 
 
     
 
       const cat = ()=>{
 
-        const unique = [...new Set(FoodData.map((item)=> item.category ))]
-        setcatogories(unique) ;
-
-        console.log(unique);
+        const unique = [...new Set(FoodData.map((item)=> item.category ))];
+        dispatch(setCatogory(unique)) ;
+       
         
     
       }
 
       useEffect(() => {
+        console.log("running");
         
         cat() ;
-      }, [])
+      },[])
       
+    
     
     
 
@@ -34,7 +39,7 @@ const Catogory_menu = () => {
             sm:ml-[130px]
             md:ml-[190px] lg:ml-[230px]
             xl:ml-[330px]
-            2xl:ml-[460px]">Find the best Food </h3>
+            2xl:ml-[460px]" >Find the best Food </h3>
         </div>
         <div className="sm:ml-[120px] sm:mt-4 md:ml-[200px] lg:ml-[220px] xl:flex 
         xl:ml-[330px] xl:gap-7
