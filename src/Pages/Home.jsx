@@ -4,22 +4,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import Cart from "../Components/Cart"
 import Catogory_menu from "../Components/Catogory_menu"
-import {useState,useEffect} from "react"
+import {useState} from "react"
 import spin from "../Components/Items"
+import { useSelector } from "react-redux";
+
 
 const Home = () => {
 
   const [cart,setCart] = useState(false) ;
-  const [load , setload] = useState(true) ;
+  const item_quantity = useSelector((state) => state.item.item) 
 
-  useEffect(() => {
-    
-    setTimeout(() => {
 
-      setload(false) ;
-    }, 2000);
-    
-  }, [])
+  
   
  
   
@@ -44,16 +40,20 @@ const Home = () => {
           </div>
           <Catogory_menu/>
 
-            <div>
+            <div className="">
 
 
               <h1><FontAwesomeIcon icon={faCartShopping}
               className={`text-white text-4xl absolute right-0 mr-6 mb-6 bottom-0
               cursor-pointer
-              ${spin &&  "animate-bounce"}` }
+              ` }
               onClick={()=>{
                 setCart(!cart)
               }}/></h1>
+
+                <h1 className="text-red-700 absolute text-xl font-bold right-0 bottom-0 mr-[37px] mb-[36px]">
+                  {item_quantity}
+                </h1>
             </div>
          
               {cart && <Cart/>}

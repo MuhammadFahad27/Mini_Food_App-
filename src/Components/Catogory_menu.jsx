@@ -49,16 +49,27 @@ const Catogory_menu = () => {
 
            </Link>
            
-             <button className="bg-gray-500 text-gray-300 ml-12  w-[260px] py-1 hover:text-black rounded-sm cursor-pointer  mb-3
+            <Link to={"lunch"}>
+              <button className="bg-gray-500 text-gray-300 ml-12  w-[260px] py-1 hover:text-black rounded-sm cursor-pointer  mb-3
              sm:w-[300px] lg:w-[450px]
              xl:w-[100px] xl:ml-0 ">Lunch</button> 
+            </Link>
+            <Link to={"breakfast"}>
+
             <button className="bg-gray-500 text-gray-300 ml-12  w-[260px] py-1  hover:text-black rounded-sm cursor-pointer  mb-3
             sm:w-[300px] lg:w-[450px] xl:w-[100px] xl:ml-0">Break Fast</button>
-            <button className="bg-gray-500 text-gray-300 ml-12  w-[260px] py-1 hover:text-black rounded-sm cursor-pointer  mb-3
-            sm:w-[300px] lg:w-[450px] xl:w-[100px] xl:ml-0">Dinner</button>
+                
+            </Link>
+            <Link to={"dinner"}>
+              <button className="bg-gray-500 text-gray-300 ml-12  w-[260px] py-1 hover:text-black rounded-sm cursor-pointer  mb-3
+              sm:w-[300px] lg:w-[450px] xl:w-[100px] xl:ml-0">Dinner</button>
+            </Link>
+           <Link to={"snacks"}>
+
             <button className="bg-gray-500 text-gray-300 ml-12  w-[260px] py-1 hover:text-black rounded-sm cursor-pointer  mb-3
             sm:w-[300px] lg:w-[450px] xl:w-[100px]
             xl:ml-0">Snacks</button>
+           </Link>
         </div>
     </div>
   )
